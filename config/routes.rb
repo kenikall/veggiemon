@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   get 'google_maps/index'
   
-  get 'user/show'
+  resources :user, only: [:show]
 
-  get 'monster/new'
+  resources :monster, only: [:new, :show]
 
-  get 'monster/show'
+  root 'user#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
