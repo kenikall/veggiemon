@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'yelps/index'
+
+  get 'google_maps/index'
+  
   get 'user/show'
 
   get 'monster/new'
