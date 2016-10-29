@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'user/show'
+  get 'yelps/index'
 
-  get 'monster/new'
+  get 'google_maps/index'
+  
+  resources :user, only: [:show]
 
-  get 'monster/show'
+  resources :monster, only: [:new, :show]
+
+  root 'user#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
