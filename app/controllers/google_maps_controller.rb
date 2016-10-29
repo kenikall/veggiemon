@@ -2,6 +2,8 @@ class GoogleMapsController < ApplicationController
   def index
     @location = "San Francisco, CA, United States"
     @parks_call = Yelp.client.search(@location, { term: 'park', limit: 16 }).businesses
-    @parks_locations = @parks_call.map { |park| park.location.display_address[0] }.join("&markers=")
+    @parks_locations = @parks_call.map { |park| park.location.display_address[0] }
+    @parks_longlat = @parks_call.map { |park| {lat: park.location.coordinate.longitude, lng: park.location.coordinate.latitude} }
+
   end
 end
