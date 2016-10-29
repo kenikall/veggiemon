@@ -1,2 +1,0 @@
-class Monster < ApplicationRecord
-end
