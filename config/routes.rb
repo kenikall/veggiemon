@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :monster, only: [:new, :show]
 
-  # root 'user#1'
-  get '/', to: 'user#show'
+  root 'user#show'
+  # get '/', to: 'user#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
