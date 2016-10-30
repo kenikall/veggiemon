@@ -8,7 +8,7 @@
   <div class="user_image"></div>
 
   <div class="buttons">
-    <div class="map"></div>
+    <div class="map"><img src="images/map_icon.ico"></div>
     <div class="scan">
       <input type="file" id="take-picture" accept="image/*">
     </div>
@@ -38,13 +38,15 @@
 
   function map(){
     $(".map").on("click", function(){
-      window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+      window.location.replace("https://boiling-citadel-40388.herokuapp.com/google_maps/index");
     });
   };
 
   function pack(){
     $(".pack").on("click", function(){
-      window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+      alert("go to the pack page");
+      // go to the pack page
+      // window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
     });
   };
 </script>
