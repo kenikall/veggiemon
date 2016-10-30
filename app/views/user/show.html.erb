@@ -50,7 +50,8 @@
 
   function fruit(){
     $(".scan").on("click", function(){
-      window.location.replace("/fruit/new");
+      $("#take-picture").trigger("click");
+      // window.location.replace("/fruit/new");
     });
   };
 </script>
