@@ -74,6 +74,10 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_api']%>&callback=initMap">
     </script>
+    
+    <div class="home_button">
+      <img src="/images/Home-icon.png">
+    </div>
 
     <h2>Parks</h2>
       <ul>
@@ -82,9 +86,6 @@
         <% end %>
       </ul>
 
-      <div class="home_button">
-        <img src="/images/Home-icon.png">
-      </div>
 
       <script type="text/javascript">
         $(document).ready(function(){
