@@ -1,5 +1,6 @@
 $(document).ready(function(){
   scan();
+  console.log("ready");
 });
 
 function scan(){
