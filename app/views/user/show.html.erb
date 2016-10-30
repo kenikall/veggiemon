@@ -20,19 +20,17 @@
 <script type="text/javascript">
   $(document).ready(function(){
     scan();
-    console.log("ready");
   });
 
   function scan(){
     $("#take-picture").on("click", function(){
-      console.log("CLICKED");
       setTimeout(function(){
         $(".hideable").css("display", "none");
         $(".loader").css("display", "block");
-      }, 4000);
+      }, 7000);
       setTimeout(function(){
         window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
-      }, 8000)
+      }, 11000)
     });
   };
 </script>
