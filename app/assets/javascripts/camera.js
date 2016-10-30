@@ -6,7 +6,7 @@ takePicture.onchange = function (event) {
     if (files && files.length > 0) {
         file = files[0];
     }
-    $(".loader").toggle();
+    // $(".loader").toggle();
 };
 
 // Image reference
