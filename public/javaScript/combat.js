@@ -1,12 +1,12 @@
 var mainState = {
 	preload: function() {
 		//sounds
-		game.load.audio('bad1', '/sounds/bad1.png');
-		game.load.audio('bad2', '/sounds/bad2.png');
-		game.load.audio('bad3', '/sounds/bad3.png');
-		game.load.audio('good1', '/sounds/good1.png');
-		game.load.audio('good2', '/sounds/good2.png');
-		game.load.audio('good3', '/sounds/good3.png');
+		game.load.audio('bad1', '/sounds/bad1.wav');
+		game.load.audio('bad2', '/sounds/bad2.wav');
+		game.load.audio('bad3', '/sounds/bad3.wav');
+		game.load.audio('good1', '/sounds/good1.wav');
+		game.load.audio('good2', '/sounds/good2.wav');
+		game.load.audio('good3', '/sounds/good3.wav');
 		//background
 		game.load.image('background', '/images/combat_background.png');
 		// trainer
@@ -95,15 +95,20 @@ var mainState = {
 
 		this.left = game.add.sprite(215, 255, 'left');
 		this.circle1 = game.add.sprite(270,250, 'white_circle');
-		this.quantity1 = game.add.text(this.circle1.x+40, this.circle1.y+20, "x5", {font: '25px Arial', fontWeight: 'bold', fill: '#000000'});
+		this.food1quan = 3;
+		this.quantity1 = game.add.text(this.circle1.x+40, this.circle1.y+20, "x"+this.food1quan.toString(), {font: '25px Arial', fontWeight: 'bold', fill: '#000000'});
 		this.circle2 = game.add.sprite(370,250, 'white_circle');
-		this.quantity2 = game.add.text(this.circle2.x+40, this.circle2.y+20, "x5", {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
+		this.food2quan = 2;
+		this.quantity2 = game.add.text(this.circle2.x+40, this.circle2.y+20, "x"+this.food2quan.toString(), {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
 		this.circle3 = game.add.sprite(470,250, 'white_circle');
-		this.quantity3 = game.add.text(this.circle3.x+40, this.circle3.y+20, "x5", {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
+		this.food3quan = 4;
+		this.quantity3 = game.add.text(this.circle3.x+40, this.circle3.y+20, "x"+this.food3quan.toString(), {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
 		this.circle4 = game.add.sprite(570,250, 'white_circle');
-		this.quantity4 = game.add.text(this.circle4.x+40, this.circle4.y+20, "x5", {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
+		this.food4quan = 2;
+		this.quantity4 = game.add.text(this.circle4.x+40, this.circle4.y+20, "x"+this.food4quan.toString(), {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
 		this.circle5 = game.add.sprite(670,250, 'white_circle');
-		this.quantity5 = game.add.text(this.circle5.x+40, this.circle5.y+20, "x5", {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
+		this.food5quan = 6;
+		this.quantity5 = game.add.text(this.circle5.x+40, this.circle5.y+20, "x"+this.food5quan.toString(), {font: '25px Arial',fontWeight: 'bold', fill: '#000000'});
 		this.right = game.add.sprite(750,255, 'right')
 
 		this.food1 = game.add.sprite(this.circle1.x-15, this.circle1.y+10, 'pear');
@@ -148,46 +153,99 @@ var mainState = {
 	},
 
 	listener: function(food){
+		this.checkFood(food.key);
 		tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
 		game.add.tween(food.scale).to({x: .25, y: .25}, 750, Phaser.Easing.Linear.None, true);
 		tween.onComplete.add(function(){food.destroy()}, this);
 	},
 
-	moveToVeggie(food){
-		if (food.x > this.veggiemon.x){
-			do{
-				food.x-- ;
-				console.log(food.x);
-			} while(food.x > this.veggiemon.x)
-		}else if (food.x < this.veggiemon.x){
-			do{
-				food.x++;
-				console.log(food.x);
-			}while(food.x < this.veggiemon.x)
+	checkFood: function(food){
+		switch(food){
+			case "pear":
+				this.food1quan--
+				this.quantity1.text = "x"+this.food1quan.toString()
+				if (this.food1quan > 0){
+					this.food1 = game.add.sprite(this.circle1.x-15, this.circle1.y+10, 'pear');
+					this.food1.inputEnabled = true;
+					this.food1.events.onInputDown.add(this.listener, this);
+				}
+				this.happinessMeter.width += 96;
+				this.changeFaces();
+				var that = this;
+				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
+				setTimeout(function(){
+					sound.play();
+				},750)
+				break;
+			case "corn":
+				this.food2quan--
+				this.quantity2.text = "x"+this.food2quan.toString()
+				if (this.food2quan > 0){
+					this.food2 = game.add.sprite(this.circle2.x-15, this.circle2.y+10, 'corn');
+					this.food2.inputEnabled = true;
+					this.food2.events.onInputDown.add(this.listener, this);
+				}
+				this.happinessMeter.width += 48;
+				this.changeFaces();
+				var that = this;
+				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
+				setTimeout(function(){
+					sound.play();
+				},750)
+				break;
+			case "cake":
+				this.food3quan--
+				this.quantity3.text = "x"+this.food3quan.toString()
+				if (this.food3quan > 0){
+					this.food3 = game.add.sprite(this.circle3.x-15, this.circle3.y+10, 'cake');
+					this.food3.inputEnabled = true;
+					this.food3.events.onInputDown.add(this.listener, this);
+				}
+				this.happinessMeter.width -= 144;
+				this.changeFaces();
+				var that = this;
+				sound = that.yuck[Math.floor(Math.random()*that.yuck.length)];
+				setTimeout(function(){
+					sound.play();
+				},750)
+				break;
+			case "banana":
+				this.food4quan--
+				this.quantity4.text = "x"+this.food4quan.toString()
+				if (this.food4quan > 0){
+					this.food4 = game.add.sprite(this.circle4.x-15, this.circle4.y+10, 'banana');
+					this.food4.inputEnabled = true;
+					this.food4.events.onInputDown.add(this.listener, this);
+				}
+				this.happinessMeter.width += 96;
+				this.changeFaces();
+				var that = this;
+				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
+				setTimeout(function(){
+					sound.play();
+				},750)
+				break;
+			case "ice_cream":
+				this.food5quan--
+				this.quantity5.text = "x"+this.food5quan.toString()
+				if (this.food5quan > 0){
+					this.food5 = game.add.sprite(this.circle5.x-15, this.circle5.y+10, 'ice_cream');
+					this.food5.inputEnabled = true;
+					this.food5.events.onInputDown.add(this.listener, this);
+				}
+				this.happinessMeter.width -= 96;
+				this.changeFaces();
+				var that = this;
+				sound = that.yuck[Math.floor(Math.random()*that.yuck.length)];
+				setTimeout(function(){
+					sound.play();
+				},750)
+				break;
 		}
+	},
 
-		if (food.y > this.veggiemon.y){
-			do{
-				food.x-- ;
-			} while(food.y > this.veggiemon.y)
-		}else if (food.y < this.veggiemon.y){
-			do{
-				food.y++;
-			}while(food.y < this.veggiemon.y)
-		}
-	// moveFoodx: function
+	changeFaces: function(){
 
-		// // this.food.x +=1;
-		// if (this.food.x < this.veggiemon.x && this.food.y !== this.veggiemon.y){
-		// 	if (this.food.x < this.veggiemon.x) {this.food.x++};
-
-
-		// 	// else if ( === false) { this.food.y -= ((this.food.y-this.veggiemon.y)/(this.food.x-this.veggiemon.x))}
-
-		// 	this.food.width -= 0.5;
-		// 	this.food.height -= 0.5;
-		// }
-		// this.food.kill;
 	},
 
 	update: function() {
