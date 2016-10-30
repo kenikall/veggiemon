@@ -3,6 +3,7 @@
   <head>
     <title>Veggiemon</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <style type="text/css">
       .user_nav {
@@ -40,16 +41,21 @@
         width: 30%;
         height: 100%;
         border: 3px solid orange;
-        margin: auto;
+      }
+
+      .map {
+        float: left;
+      }
+
+      .pack {
+        float: right;
       }
 
       .scan {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin: auto;
       }
 
     </style>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
