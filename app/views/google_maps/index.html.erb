@@ -7,7 +7,6 @@
   </head>
   <body>
     <div id="map"></div>
-    <%= @parks_longlat %>
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -17,7 +16,7 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 15
+          zoom: 12
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -28,10 +27,9 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-            console.log(pos);
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are right here!');
             map.setCenter(pos);
 
             var marker = new google.maps.Marker({
@@ -39,20 +37,21 @@
               map: map,
               title: 'Pier 17'
             });
-            marker.addListener('click', function() {
-              infowindow.open(map, marker);
-            });
+            // marker.addListener('click', function() {
+            //   infowindow.open(map, marker);
+            // });
 
             var parks = <%= @parks_longlat %>;
-            console.log(parks[0])
             for (i=0; i < parks.length; i++) {
+              var pos = {lat: parks[i][1], lng: parks[i][0]};
               var marker = new google.maps.Marker({
-                position: parks[i],
-                map: map
+                position: pos,
+                map: map,
+                title:"HERE"
               });
-              marker.addListener('click', function() {
-                infowindow.open(map, marker);
-              });
+              // marker.addListener('click', function() {
+              //   infowindow.open(map, marker);
+              // });
             };
               
 

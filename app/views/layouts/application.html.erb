@@ -5,8 +5,74 @@
             <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
 
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <style type="text/css">
+      .user_nav {
+        background-color: purple;
+        color: white;
+        padding: 3%;
+        width: 100%;
+        margin: 0;
+      }
+
+      .level {
+        display: inline;
+        border: 2px gray;
+        margin-left: 80%;
+        width: 15%;
+      }
+
+      .level_num {
+        display: inline;
+        margin-left: 90%;
+        width: 5%;
+        border-radius: 2.5%;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        background-color: blue;
+        height: 100%;
+      }
+
+      .user_image {
+        border: 2px solid red;
+        width: 80%;
+        height: 60%;
+        margin: 8% auto;
+      }
+
+      .buttons {
+        width: 65%;
+        margin: 8% auto;
+        height: 10%;
+        text-align: center;
+      }
+
+      .buttons div {
+        display: inline-block;
+        width: 25%;
+        height: 100%;
+        border: 3px solid orange;
+      }
+
+      .map {
+        float: left;
+      }
+
+      .pack {
+        float: right;
+      }
+
+      .scan {
+        margin: auto;
+      }
+
+    </style>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
