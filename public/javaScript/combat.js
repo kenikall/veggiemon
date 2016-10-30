@@ -169,13 +169,15 @@ var mainState = {
 					this.food1.inputEnabled = true;
 					this.food1.events.onInputDown.add(this.listener, this);
 				}
-				this.happinessMeter.width += 96;
-				this.changeFaces();
+				if (this.happinessMeter.width + 96) {
+					this.happinessMeter.width += 96;
+				} else {
+					this.happinessMeter.width = 480
+				}
 				var that = this;
 				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
-				setTimeout(function(){
-					sound.play();
-				},750)
+				setTimeout(function(){ sound.play() },750)
+				this.checkHealth();
 				break;
 			case "corn":
 				this.food2quan--
@@ -185,13 +187,15 @@ var mainState = {
 					this.food2.inputEnabled = true;
 					this.food2.events.onInputDown.add(this.listener, this);
 				}
-				this.happinessMeter.width += 48;
-				this.changeFaces();
+				if (this.happinessMeter.width + 48) {
+					this.happinessMeter.width += 48;
+				} else {
+					this.happinessMeter.width = 480
+				}
 				var that = this;
 				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
-				setTimeout(function(){
-					sound.play();
-				},750)
+				setTimeout(function(){ sound.play() },750)
+				this.checkHealth();
 				break;
 			case "cake":
 				this.food3quan--
@@ -201,13 +205,15 @@ var mainState = {
 					this.food3.inputEnabled = true;
 					this.food3.events.onInputDown.add(this.listener, this);
 				}
-				this.happinessMeter.width -= 144;
-				this.changeFaces();
+				if (this.happinessMeter.width - 122) {
+					this.happinessMeter.width -= 122;
+				} else {
+					this.happinessMeter.width = 0
+				}
 				var that = this;
 				sound = that.yuck[Math.floor(Math.random()*that.yuck.length)];
-				setTimeout(function(){
-					sound.play();
-				},750)
+				setTimeout(function(){ sound.play() },750)
+				this.checkHealth();
 				break;
 			case "banana":
 				this.food4quan--
@@ -217,13 +223,17 @@ var mainState = {
 					this.food4.inputEnabled = true;
 					this.food4.events.onInputDown.add(this.listener, this);
 				}
-				this.happinessMeter.width += 96;
-				this.changeFaces();
+				console.log(this.happinessMeter.width);
+				if (this.happinessMeter.width + 122) {
+					this.happinessMeter.width += 122;
+				} else {
+					this.happinessMeter.width = 480
+				}
+				if (this.happinessMeter.width > 480){ this.happinessMeter = 480};
 				var that = this;
 				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
-				setTimeout(function(){
-					sound.play();
-				},750)
+				setTimeout(function(){ sound.play() },750)
+				this.checkHealth();
 				break;
 			case "ice_cream":
 				this.food5quan--
@@ -233,19 +243,37 @@ var mainState = {
 					this.food5.inputEnabled = true;
 					this.food5.events.onInputDown.add(this.listener, this);
 				}
-				this.happinessMeter.width -= 96;
-				this.changeFaces();
+				if (this.happinessMeter.width - 96) {
+					this.happinessMeter.width -= 96;
+				} else {
+					this.happinessMeter.width = 0
+				}
 				var that = this;
 				sound = that.yuck[Math.floor(Math.random()*that.yuck.length)];
-				setTimeout(function(){
-					sound.play();
-				},750)
+				setTimeout( function(){ sound.play() },750)
+				this.checkHealth();
 				break;
 		}
 	},
 
-	changeFaces: function(){
+	checkHealth: function(){
+		console.log(this.happinessMeter.width);
+		if (this.happinessMeter.width >= 480 ){ this.capture() };
+		if (this.happinessMeter.width <= 0  ){ this.escape() };
+	},
 
+	capture: function(){
+		congrats = game.add.sprite(480,270, 'white_circle');
+		congrats.anchor.setTo(.5,.5);
+		congrats.width = 10;
+		congrats.height = 10;
+
+		game.add.tween(congrats).to({x: 8, y: 8}, 750, Phaser.Easing.Linear.None, true);
+		// tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
+	},
+	escape: function(){
+		game.add.tween(this.veggiemon.scale).to({x: -1}, 100, Phaser.Easing.Linear.None, true);
+		tween = game.add.tween(this.veggiemon).to({x: 1500}, 750, Phaser.Easing.Linear.None, true, 0);
 	},
 
 	update: function() {
