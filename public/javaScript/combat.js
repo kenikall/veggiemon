@@ -108,10 +108,33 @@ var mainState = {
 
 		this.food1 = game.add.sprite(this.circle1.x-15, this.circle1.y+10, 'pear');
 		this.food1.inputEnabled = true;
+		this.food1.events.onInputDown.add(this.listener, this);
+
 		this.food2 = game.add.sprite(this.circle2.x-15, this.circle2.y+10, 'corn');
+		this.food2.inputEnabled = true;
+		this.food2.events.onInputDown.add(this.listener, this);
+
 		this.food3 = game.add.sprite(this.circle3.x-15, this.circle3.y+10, 'cake');
+		this.food3.inputEnabled = true;
+		this.food3.events.onInputDown.add(this.listener, this);
+
 		this.food4 = game.add.sprite(this.circle4.x-15, this.circle4.y+10, 'banana');
+		this.food4.inputEnabled = true;
+		this.food4.events.onInputDown.add(this.listener, this);
+
 		this.food5 = game.add.sprite(this.circle5.x-15, this.circle5.y+10, 'ice_cream');
+		this.food5.inputEnabled = true;
+		this.food5.events.onInputDown.add(this.listener, this);
+
+		yum1 = game.add.audio('good1');
+		yum2 = game.add.audio('good2');
+		yum3 = game.add.audio('good3');
+		this.yum = [yum1, yum2, yum3];
+		yuck1 = game.add.audio('bad1');
+		yuck2 = game.add.audio('bad2');
+		yuck3 = game.add.audio('bad3');
+		this.yuck = [yuck1, yuck2, yuck3];
+
 
 		this.quantity1.bringToTop();
 		this.quantity2.bringToTop();
@@ -124,24 +147,47 @@ var mainState = {
 		this.spawnTrainer();
 	},
 
-	listner: function(food){
-		console.log("hi");
+	listener: function(food){
 		this.moveToVeggie(food);
+		// this.food = food;
+		//
 	},
 
 	moveToVeggie(food){
-		apex = true
-		while (food.x < veggiemon.x && food.y !== veggiemon.y){
-			if (food.x < veggiemon.x) {food.x++};
-
-			if (food.y > 10 && apex) {food.y += 2}
-			else if (food.y< 10) {apex = false}
-			else if (apex === false) { food.y -= ((food.y-veggiemon.y)/(food.x-veggiemon.x))}
-
-			food.width -= 0.5;
-			food.height -= 0.5;
+		if (food.x > this.veggiemon.x){
+			do{
+				food.x-- ;
+				console.log(food.x);
+			} while(food.x > this.veggiemon.x)
+		}else if (food.x < this.veggiemon.x){
+			do{
+				food.x++;
+				console.log(food.x);
+			}while(food.x < this.veggiemon.x)
 		}
-		food.kill;
+
+		if (food.y > this.veggiemon.y){
+			do{
+				food.x-- ;
+			} while(food.y > this.veggiemon.y)
+		}else if (food.y < this.veggiemon.y){
+			do{
+				food.y++;
+			}while(food.y < this.veggiemon.y)
+		}
+	// moveFoodx: function
+
+		// // this.food.x +=1;
+		// if (this.food.x < this.veggiemon.x && this.food.y !== this.veggiemon.y){
+		// 	if (this.food.x < this.veggiemon.x) {this.food.x++};
+
+
+		// 	// else if ( === false) { this.food.y -= ((this.food.y-this.veggiemon.y)/(this.food.x-this.veggiemon.x))}
+
+		// 	this.food.width -= 0.5;
+		// 	this.food.height -= 0.5;
+		// }
+		// this.food.kill;
 	},
 
 	update: function() {
