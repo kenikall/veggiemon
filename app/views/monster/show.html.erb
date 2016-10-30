@@ -9,17 +9,14 @@
 
 
     <!-- the username -->
-    <h1><%= @monster %></h1>
+    <h1><%= @monster_name %></h1>
 
     <!-- and role or location -->
-    <h2>So scary...</h2>
+    <h2><%= @facts %></h2>
 
   </header>
 
   <div class="panel info">
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <div class="skills">
@@ -30,12 +27,12 @@
       <ul class="chart--horiz">
         <li class="chart__bar mlevel" data-skill="95">
           <span class="chart__label">
-            Level
+            Level: <%= @monster.level %>
           </span>
         </li>
         <li class="chart__bar mexperience" data-skill="95">
           <span class="chart__label">
-            Experience
+            Experience: <%= @monster.xp %>
           </span>
         </li>
         <li class="chart__bar mpower" data-skill="70">
