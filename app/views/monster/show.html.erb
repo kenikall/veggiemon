@@ -88,3 +88,18 @@
 </aside>
 </div>
 <!-- that’s all folks! -->
+<div class="home_button">
+  <img src="/images/Home-icon.png">
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    home();
+  });
+
+  function home(){
+    $(".home_button").on("click", function(){
+      window.location.replace("https://veggiemon-grow.herokuapp.com");
+    });
+  };
+</script>
