@@ -15,7 +15,21 @@
 </div>
 
 <script src="js/base.js"></script>
-<script src="../../assets/javascripts/nav_button.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    scan();
+    console.log("ready");
+  });
+
+  function scan(){
+    $("#take-picture").on("click", function(){
+      console.log("CLICKED");
+      setTimeout(function(){
+        window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+      }, 5000)
+    });
+  };
+</script>
 <div class="loader">Loading...</div>
 
 
