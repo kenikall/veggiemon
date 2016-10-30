@@ -20,6 +20,8 @@
 <script type="text/javascript">
   $(document).ready(function(){
     scan();
+    map();
+    pack();
   });
 
   function scan(){
@@ -31,6 +33,18 @@
       setTimeout(function(){
         window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
       }, 11000)
+    });
+  };
+
+  function map(){
+    $(".map").on("click", function(){
+      window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+    });
+  };
+
+  function pack(){
+    $(".pack").on("click", function(){
+      window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
     });
   };
 </script>
