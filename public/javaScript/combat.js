@@ -64,7 +64,7 @@ var mainState = {
 		this.veggiemon.alpha = 0;
 
 		this.answerContainer = game.add.sprite(10,330, 'question_div');
-		this.question_text = game.add.text(this.answerContainer.x+10, this.answerContainer.y+3, "question", {font: '45px Arial', fill: '#ffffff'});
+		this.question_text = game.add.text(this.answerContainer.x+10, this.answerContainer.y+3, "What food is the base of guacamole?", {font: '45px Arial', fill: '#ffffff'});
 
 		this.healthContainer = game.add.sprite(11,8, 'happiness_div');
 		this.heathBack = game.add.sprite(this.healthContainer.x+6,this.healthContainer.y+6, 'happiness_full');
@@ -78,19 +78,19 @@ var mainState = {
 		this.mad.height = this.mad.height *.75
 
 		this.answer1 = game.add.sprite(20,390, 'answer_div');
-		this.answer1_text = game.add.text(this.answer1.x+85, this.answer1.y+35, "answer 1", {font: '25px Arial', fill: '#000000'});
+		this.answer1_text = game.add.text(this.answer1.x+85, this.answer1.y+35, "tomatoes", {font: '25px Arial', fill: '#000000'});
 		this.answer1_text.anchor.setTo(.5,.5);
 
 		this.answer2 = game.add.sprite(215,390, 'answer_div');
-		this.answer2_text = game.add.text(this.answer2.x+85, this.answer2.y+35, "answer 2", {font: '25px Arial', fill: '#000000'});
+		this.answer2_text = game.add.text(this.answer2.x+85, this.answer2.y+35, "carrots", {font: '25px Arial', fill: '#000000'});
 		this.answer2_text.anchor.setTo(.5,.5);
 
 		this.answer3 = game.add.sprite(410,390, 'answer_div');
-		this.answer3_text = game.add.text(this.answer3.x+85, this.answer3.y+35, "answer 3", {font: '25px Arial', fill: '#000000'});
+		this.answer3_text = game.add.text(this.answer3.x+85, this.answer3.y+35, "avocados", {font: '25px Arial', fill: '#000000'});
 		this.answer3_text.anchor.setTo(.5,.5);
 
 		this.answer4 = game.add.sprite(605,390, 'answer_div');
-		this.answer4_text = game.add.text(this.answer4.x+85, this.answer4.y+35, "answer 4", {font: '25px Arial', fill: '#000000'});
+		this.answer4_text = game.add.text(this.answer4.x+85, this.answer4.y+35, "lima beans", {font: '25px Arial', fill: '#000000'});
 		this.answer4_text.anchor.setTo(.5,.5);
 
 		this.left = game.add.sprite(215, 255, 'left');
@@ -223,13 +223,11 @@ var mainState = {
 					this.food4.inputEnabled = true;
 					this.food4.events.onInputDown.add(this.listener, this);
 				}
-				console.log(this.happinessMeter.width);
 				if (this.happinessMeter.width + 122) {
 					this.happinessMeter.width += 122;
 				} else {
 					this.happinessMeter.width = 480
 				}
-				if (this.happinessMeter.width > 480){ this.happinessMeter = 480};
 				var that = this;
 				sound = that.yum[Math.floor(Math.random()*that.yum.length)];
 				setTimeout(function(){ sound.play() },750)
@@ -263,15 +261,30 @@ var mainState = {
 	},
 
 	capture: function(){
-		congrats = game.add.sprite(480,270, 'white_circle');
+		console.log("????");
+		this.happinessMeter.width = 480;
+		congrats = game.add.sprite(400,270, 'white_circle');
 		congrats.anchor.setTo(.5,.5);
 		congrats.width = 10;
 		congrats.height = 10;
 
-		game.add.tween(congrats).to({x: 8, y: 8}, 750, Phaser.Easing.Linear.None, true);
+
+		announce1 = game.add.text(game.world.centerX-2,game.world.centerY-118, "You captured \n     Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#000000'});
+		announce1.anchor.setTo(.5,.5);
+		announce = game.add.text(game.world.centerX,game.world.centerY-120, "You captured \n     Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#33ceff'});
+		announce.anchor.setTo(.5,.5);
+
+		var that = this
+		setTimeout(function(){
+			that.veggiemon.bringToTop();
+			game.add.tween(congrats.scale).to({x: 8, y: 8}, 750, Phaser.Easing.Linear.None, true);
+			game.add.tween(that.veggiemon.scale).to({x: 1.5, y: 1.5}, 750, Phaser.Easing.Linear.None, true);
+			game.add.tween(that.veggiemon).to({x: game.world.centerX-60, y: game.world.centerY-50}, 750, Phaser.Easing.Linear.None, true);
+		},2000)
 		// tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
 	},
 	escape: function(){
+		this.happinessMeter.width = 0;
 		game.add.tween(this.veggiemon.scale).to({x: -1}, 100, Phaser.Easing.Linear.None, true);
 		tween = game.add.tween(this.veggiemon).to({x: 1500}, 750, Phaser.Easing.Linear.None, true, 0);
 	},
@@ -302,6 +315,6 @@ var mainState = {
 	}
 }
 
-game = new Phaser.Game(960,540, Phaser.AUTO, '');
+game = new Phaser.Game(800,480, Phaser.AUTO, '');
 game.state.add('main', mainState);
 game.state.start('main');
