@@ -4,14 +4,16 @@
   <div class="level_num">7</div>
 </div>
 
-<div class="user_image"></div>
+<div class="hideable">
+  <div class="user_image"></div>
 
-<div class="buttons">
-  <div class="map"></div>
-  <div class="scan">
-    <input type="file" id="take-picture" accept="image/*">
+  <div class="buttons">
+    <div class="map"></div>
+    <div class="scan">
+      <input type="file" id="take-picture" accept="image/*">
+    </div>
+    <div class="pack"></div>
   </div>
-  <div class="pack"></div>
 </div>
 
 <script src="js/base.js"></script>
@@ -25,8 +27,12 @@
     $("#take-picture").on("click", function(){
       console.log("CLICKED");
       setTimeout(function(){
+        $(".hideable").css("display", "none");
+        $(".loader").css("display", "block");
+      }, 4000);
+      setTimeout(function(){
         window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
-      }, 5000)
+      }, 8000)
     });
   };
 </script>
