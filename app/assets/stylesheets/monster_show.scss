@@ -171,14 +171,14 @@ header {
             @include transform(scale(1.05));
         }
     }
-    h1, h2 {
+    .mname, .mfact {
         position: absolute;
         background-color: $slate;
         z-index: 20;
         left: 50%;
         right: 50%;
     }
-    h1 {
+    .mname {
         color: $white;
         height: 50px;
         top: 300px;
@@ -214,8 +214,8 @@ header {
             right: 0;
         }
     }
-    h2 {
-        color: lighten($slate, 15%);
+    .mfact {
+        color: lighten($slate, 20%);
         height: 40px;
         top: 358px;
         text-align: center;
@@ -351,8 +351,8 @@ header {
         color: transparent;
     }
     100% {
-        padding-top: 0px;
-        color: lighten($slate, 20%);
+        padding-top: 10px;
+        color: white;
     }
 }
 @include keyframes(showTips) {

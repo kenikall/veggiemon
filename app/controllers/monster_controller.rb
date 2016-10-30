@@ -1,13 +1,13 @@
 class MonsterController < ApplicationController
   def show
     @monster = Monster.find(params[:id])
-    if @monster.xp <= 10
+    if @monster.level <= 10
       @monster_name = @monster.name_one
       @monster_img = @monster.image_one
-    elsif @monster.xp > 10 && @monster.xp < 20
+    elsif @monster.level > 10 && @monster.level <= 20
       @monster_name = @monster.name_two
       @monster_img = @monster.image_two
-    elsif @monster.xp > 20 && @monster.xp < 30
+    elsif @monster.level > 20 && @monster.level <= 30
       @monster_name = @monster.name_three
       @monster_img = @monster.image_three
     end

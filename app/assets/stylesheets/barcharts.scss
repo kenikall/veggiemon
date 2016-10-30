@@ -156,14 +156,22 @@
     @include stagger-anim-delay(3, 4.7s, 0.2s);
   }
 
-  &[data-skill='35'] {
-    width: 35%;
+  &[data-skill='0'] {
+    width: 20%;
   }
-  &[data-skill='40'] {
-    width: 40%;
+
+  &[data-skill='1'] {
+    width: 25%;
   }
-  &[data-skill='45'] {
-    width: 45%;
+
+  &[data-skill='2'] {
+    width: 4%;
+  }
+  &[data-skill='3'] {
+    width: 6%;
+  }
+  &[data-skill='4'] {
+    width: 8%;
   }
   &[data-skill='50'] {
     width: 50%;
