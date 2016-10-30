@@ -92,8 +92,23 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_api']%>&callback=initMap">
     </script>
-
     
+    <div class="home_button">
+      <img src="/images/Home-icon.png">
+    </div>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          home();
+        });
+
+        function home(){
+          $(".home_button").on("click", function(){
+            window.location.replace("https://veggiemon-grow.herokuapp.com");
+          });
+        };
+      </script>
+
   </body>
 
 
