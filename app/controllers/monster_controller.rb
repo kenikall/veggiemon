@@ -1,4 +1,8 @@
 class MonsterController < ApplicationController
+  def index
+
+  end
+
   def show
     @monster = Monster.find(params[:id])
     if @monster.level <= 10

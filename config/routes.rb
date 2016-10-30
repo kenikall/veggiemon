@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'evolutions/index'
+
   get 'yelps/index'
 
   get 'google_maps/index'
