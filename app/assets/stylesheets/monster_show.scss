@@ -58,7 +58,7 @@
     box-sizing: border-box;
     @include transition(all cubic-bezier(0.37, 0.15, 0.54, 1.99) .5s);
 }
-body {
+#monster_show {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -85,7 +85,7 @@ $black: #000;
 $silver: #e6eef1;
 $slate: #4e5b6b;
 
-body {
+#monster_show {
   background-color: $silver;
   @include transform(translateZ(0));
 }
