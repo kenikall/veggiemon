@@ -216,6 +216,6 @@ var mainState = {
 	}
 }
 
-game = new Phaser.Game(800,480, Phaser.AUTO, '');
+game = new Phaser.Game(960,540, Phaser.AUTO, '');
 game.state.add('main', mainState);
 game.state.start('main');
