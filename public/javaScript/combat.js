@@ -282,6 +282,10 @@ var mainState = {
 			game.add.tween(that.veggiemon).to({x: game.world.centerX-60, y: game.world.centerY-50}, 750, Phaser.Easing.Linear.None, true);
 		},2000)
 		// tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
+
+		setTimeout(function(){
+			window.location.replace("/monster/1");
+		}, 4000);
 	},
 	escape: function(){
 		this.happinessMeter.width = 0;
