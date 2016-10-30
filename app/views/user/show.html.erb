@@ -21,7 +21,6 @@
     scan();
     map();
     pack();
-    fruit();
   });
 
   function scan(){
@@ -45,13 +44,6 @@
   function pack(){
     $(".pack").on("click", function(){
       window.location.replace("/backpack/show");
-    });
-  };
-
-  function fruit(){
-    $(".scan").on("click", function(){
-      $("#take-picture").trigger("click");
-      // window.location.replace("/fruit/new");
     });
   };
 </script>

@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get 'backpack/show'
 
-  get 'fruit/new'
-
   resources :user, only: [:show]
 
   resources :monster, only: [:new, :show]
