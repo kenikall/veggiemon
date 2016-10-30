@@ -1,36 +1,54 @@
 <div class="user_nav">
   <h1><%= @user.name %></h1>
-  <div class="level">Level</div>
-  <div class="level_num">7</div>
 </div>
 
-<div class="user_image"></div>
+<div class="hideable">
+  <div class="user_image"><img src="/images/charizard_ramen.jpg"></div>
 
-<div class="buttons">
-  <div class="map"></div>
-  <div class="scan"></div>
-  <div class="pack"></div>
+  <div class="buttons">
+    <div class="map"><img src="/images/map_icon.ico"></div>
+    <div class="scan">
+      <img src="/images/scanner-icon.png">
+      <input type="file" id="take-picture" accept="image/*">
+    </div>
+    <div class="pack"><img src="/images/backpack.png"></div>
+  </div>
 </div>
 
-<div class="container">
-
-  <section class="main-content">
-      <div>
-      <label for="file">Scan it!</label>
-        <input type="file" id="take-picture" accept="image/*">
-      </div>
-
-      <h2>Barcode:</h2>
-      <p>
-          <img src="about:blank" alt="" id="show-picture">
-      </p>
-
-      <p id="error"></p>
-
-  </section>
-
-</div>
 <script src="js/base.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    scan();
+    map();
+    pack();
+  });
+
+  function scan(){
+    $("#take-picture").on("click", function(){
+      setTimeout(function(){
+        $(".hideable").css("display", "none");
+        $(".loader").css("display", "block");
+      }, 7000);
+      setTimeout(function(){
+        window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+      }, 11000)
+    });
+  };
+
+  function map(){
+    $(".map").on("click", function(){
+      window.location.replace("https://boiling-citadel-40388.herokuapp.com/google_maps/index");
+    });
+  };
+
+  function pack(){
+    $(".pack").on("click", function(){
+      alert("go to the pack page");
+      // go to the pack page
+      // window.location.replace("https://boiling-citadel-40388.herokuapp.com/monster/new");
+    });
+  };
+</script>
 <div class="loader">Loading...</div>
 
 
