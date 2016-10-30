@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'google_maps/index'
 
+  get 'backpack/show'
+
   resources :user, only: [:show]
 
   resources :monster, only: [:new, :show]
