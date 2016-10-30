@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600,200,300,900);
+
+$colors: #E89B35 #36CBE9 #A137E7 #E83568;
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css);
 
@@ -66,7 +70,7 @@
         content: '';
         position: fixed;
         display: inherit;
-        background-color: #29d08a;
+        background-color: #97EFE9;
         width: 2500px;
         height: 2500px;
         top: 0;
@@ -75,7 +79,7 @@
         margin-left: -1250px;
         top: 50%;
         margin-top: -1200px;
-        @include animation(closeBody 1s ease forwards 1s);
+        @include animation(closeBody 1s ease forwards .8s);
     }
 }
 // color control
@@ -91,16 +95,16 @@ $slate: #4e5b6b;
 }
 
 aside {
+    padding-top: 30px;
     text-align: center;
     display: block;
-    background-color: $green;
+    background-color: #D6EADF;
     height: 90%;
     width: 90%;
     margin: auto;
     border: solid 10px $white;
     box-shadow: 0 0 10px transparentize($black, .8);
     position: relative;
-    margin-top: 100px;
     @include animation(showAside .25s ease forwards 2s);
     opacity: 0;
     header {
@@ -168,17 +172,17 @@ header {
             @include transform(scale(1.05));
         }
     }
-    h1, h2 {
+    .mname, .mfact {
         position: absolute;
         background-color: $slate;
         z-index: 20;
         left: 50%;
         right: 50%;
     }
-    h1 {
+    .mname {
         color: $white;
         height: 50px;
-        top: 300px;
+        top: 10px;
         text-align: center;
         font-size: 24px;
         padding: 20px 0 0;
@@ -211,10 +215,10 @@ header {
             right: 0;
         }
     }
-    h2 {
-        color: lighten($slate, 15%);
+    .mfact {
+        color: lighten($slate, 20%);
         height: 40px;
-        top: 358px;
+        top: 50px;
         text-align: center;
         font-size: 14px;
         font-weight: 500;
@@ -223,9 +227,11 @@ header {
     }
     &:hover {
         ~ .profile-bio {
-            top: -55px;
+            margin-top: 80px;
+            margin-left: 200px;
             opacity: 1;
             visibility: visible;
+            z-index: 99;
         }
     }
 }
@@ -338,18 +344,18 @@ header {
         color: transparent;
     }
     100% {
-        padding-top: 20px;
+        padding-top: 5px;
         color: $white;
     }
 }
 @include keyframes(showTitle-2) {
     0% {
-        padding-top: 5px;
+        padding-top: 10px;
         color: transparent;
     }
     100% {
-        padding-top: 0px;
-        color: lighten($slate, 20%);
+        padding-top: 10px;
+        color: white;
     }
 }
 @include keyframes(showTips) {
@@ -412,3 +418,52 @@ header {
 
     }
 }
+
+.panel {
+    border-top: 1px solid black;
+    border-radius: 8px;
+    transition: all 0.35s ease-in-out;
+    padding: 1.5rem 2rem;
+    /* position: absolute; */
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+dt {
+      margin: 0;
+      padding: 1rem 0;
+       &:first-child {
+        padding-top: 0;
+      }
+      &:after {
+        width: 100%;
+        background-color: #e0e0e0;
+        height: 0.5rem;
+        content: "";
+        display: block;
+      }
+    }
+    
+    dd {
+      width: 100%;
+      height: 0.5rem;
+      position: relative;
+      right: 0;
+      margin: -1.5rem 0 0;
+      /* background-color: nth($colors, 1); */
+      overflow: hidden;
+      text-indent: -1000px;
+      
+      @for $i from 1 through length($colors) {
+        &:nth-child(#{$i*2}) {
+          background-color: nth($colors, $i);
+        }
+      }
+    }
+
+
+
+
+
