@@ -18,6 +18,7 @@
           center: {lat: -34.397, lng: 150.644},
           zoom: 12
         });
+
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
@@ -37,9 +38,10 @@
               map: map,
               title: 'Pier 17'
             });
-            // marker.addListener('click', function() {
-            //   infowindow.open(map, marker);
-            // });
+
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
 
             var parks = <%= @parks_longlat %>;
             for (i=0; i < parks.length; i++) {
@@ -47,13 +49,29 @@
               var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                title:"HERE"
+                title: "hi"
               });
-              // marker.addListener('click', function() {
-              //   infowindow.open(map, marker);
-              // });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+            };
+
+            var image = '../../public/icons/';
+            var farmers = <%= @farmers_longlat %>;
+            for (i=0; i < farmers.length; i++) {
+              var pos = {lat: farmers[i][1], lng: farmers[i][0]};
+              var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: "hi",
+                icon: image
+              });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
             };
               
+            console.log(<%= @p_locations %>);
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -75,12 +93,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_api']%>&callback=initMap">
     </script>
 
-    <h2>Parks</h2>
-      <ul>
-        <% @parks_call.each do |park| %>
-          <li><%= park.name %></li>
-        <% end %>
-      </ul>
+    
   </body>
 
 
