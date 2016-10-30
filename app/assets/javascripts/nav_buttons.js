@@ -2,7 +2,7 @@ $(document).ready(function(){
   scan();
 });
 
-var scan = function(){
+function scan(){
   $("#take-picture").on("click", function(){
     console.log("CLICKED");
     setTimeout(function(){
