@@ -63,6 +63,8 @@ $colors: #E89B35 #36CBE9 #A137E7 #E83568;
     @include transition(all cubic-bezier(0.37, 0.15, 0.54, 1.99) .5s);
 }
 #monster_show {
+    height: 100%;
+    width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     position: relative;
