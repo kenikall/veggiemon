@@ -95,6 +95,7 @@ $slate: #4e5b6b;
 }
 
 aside {
+    padding-top: 30px;
     text-align: center;
     display: block;
     background-color: #97EFE9;
@@ -181,7 +182,7 @@ header {
     .mname {
         color: $white;
         height: 50px;
-        top: 300px;
+        top: 10px;
         text-align: center;
         font-size: 24px;
         padding: 20px 0 0;
@@ -217,7 +218,7 @@ header {
     .mfact {
         color: lighten($slate, 20%);
         height: 40px;
-        top: 358px;
+        top: 50px;
         text-align: center;
         font-size: 14px;
         font-weight: 500;
@@ -226,9 +227,11 @@ header {
     }
     &:hover {
         ~ .profile-bio {
+            margin-top: 80px;
             margin-left: 200px;
             opacity: 1;
             visibility: visible;
+            z-index: 99;
         }
     }
 }
@@ -341,13 +344,13 @@ header {
         color: transparent;
     }
     100% {
-        padding-top: 20px;
+        padding-top: 5px;
         color: $white;
     }
 }
 @include keyframes(showTitle-2) {
     0% {
-        padding-top: 5px;
+        padding-top: 10px;
         color: transparent;
     }
     100% {
@@ -417,13 +420,13 @@ header {
 }
 
 .panel {
+    border-top: 1px solid black;
     transition: all 0.35s ease-in-out;
     padding: 1.5rem 2rem;
     /* position: absolute; */
     background-color: #fff;
     width: 100%;
     height: 100%;
-    border: none;
     overflow: hidden;
   }
 
