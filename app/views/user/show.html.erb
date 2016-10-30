@@ -8,28 +8,19 @@
 
 <div class="buttons">
   <div class="map"></div>
-  <div class="scan"></div>
+  <div class="scan">
+    <div class="container">
+      <section class="main-content">
+          <div>
+            <input type="file" id="take-picture" accept="image/*">
+          </div>
+          <p id="error"></p>
+      </section>
+    </div>
+  </div>
   <div class="pack"></div>
 </div>
 
-<div class="container">
-
-  <section class="main-content">
-      <div>
-      <label for="file">Scan it!</label>
-        <input type="file" id="take-picture" accept="image/*">
-      </div>
-
-      <h2>Barcode:</h2>
-      <p>
-          <img src="about:blank" alt="" id="show-picture">
-      </p>
-
-      <p id="error"></p>
-
-  </section>
-
-</div>
 <script src="js/base.js"></script>
 <div class="loader">Loading...</div>
 
