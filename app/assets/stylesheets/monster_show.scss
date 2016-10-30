@@ -98,7 +98,7 @@ aside {
     padding-top: 30px;
     text-align: center;
     display: block;
-    background-color: #97EFE9;
+    background-color: #D6EADF;
     height: 90%;
     width: 90%;
     margin: auto;
@@ -421,6 +421,7 @@ header {
 
 .panel {
     border-top: 1px solid black;
+    border-radius: 8px;
     transition: all 0.35s ease-in-out;
     padding: 1.5rem 2rem;
     /* position: absolute; */

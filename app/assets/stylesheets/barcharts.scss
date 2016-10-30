@@ -134,6 +134,7 @@
 }
 
 .chart__bar {
+  box-shadow: 5px 5px 10px transparentize(black, .8);
   list-style-type: none;
   $border-rad: 4px;
   height: 30px;
