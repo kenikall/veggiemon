@@ -148,9 +148,9 @@ var mainState = {
 	},
 
 	listener: function(food){
-		this.moveToVeggie(food);
-		// this.food = food;
-		//
+		tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
+		game.add.tween(food.scale).to({x: .25, y: .25}, 750, Phaser.Easing.Linear.None, true);
+		tween.onComplete.add(function(){food.destroy()}, this);
 	},
 
 	moveToVeggie(food){
