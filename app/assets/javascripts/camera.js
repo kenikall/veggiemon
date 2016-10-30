@@ -6,6 +6,7 @@ takePicture.onchange = function (event) {
     if (files && files.length > 0) {
         file = files[0];
     }
+    $(".loader").toggle();
 };
 
 // Image reference
@@ -22,7 +23,7 @@ URL.revokeObjectURL(imgURL);
 
 (function () {
     var takePicture = document.querySelector("#take-picture"),
-        showPicture = document.querySelector("#show-picture");
+     showPicture = document.querySelector("#show-picture");
 
     if (takePicture && showPicture) {
         // Set events
