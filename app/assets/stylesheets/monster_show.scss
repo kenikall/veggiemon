@@ -70,7 +70,7 @@ $colors: #E89B35 #36CBE9 #A137E7 #E83568;
         content: '';
         position: fixed;
         display: inherit;
-        background-color: #29d08a;
+        background-color: #97EFE9;
         width: 2500px;
         height: 2500px;
         top: 0;
@@ -79,7 +79,7 @@ $colors: #E89B35 #36CBE9 #A137E7 #E83568;
         margin-left: -1250px;
         top: 50%;
         margin-top: -1200px;
-        @include animation(closeBody 1s ease forwards 1s);
+        @include animation(closeBody 1s ease forwards .8s);
     }
 }
 // color control
@@ -97,7 +97,7 @@ $slate: #4e5b6b;
 aside {
     text-align: center;
     display: block;
-    background-color: $green;
+    background-color: #97EFE9;
     height: 90%;
     width: 90%;
     margin: auto;
