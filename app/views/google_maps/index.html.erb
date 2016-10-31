@@ -56,7 +56,7 @@
               });
             };
 
-            var image = '../../public/icons/';
+            var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
             var farmers = <%= @farmers_longlat %>;
             for (i=0; i < farmers.length; i++) {
               var pos = {lat: farmers[i][1], lng: farmers[i][0]};
