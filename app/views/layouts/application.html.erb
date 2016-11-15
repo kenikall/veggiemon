@@ -7,16 +7,27 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <style type="text/css">
-
-
-    </style>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
+  <center><div class="buttons">
+    <div class="home_button">
+      <img src="/images/Home-icon.png">
+    </div>
+    <div class="map">
+      <%= link_to image_tag("/images/map_icon.ico"), google_maps_index_path %>
+    </div>
+    <div class="scan">
+      <img src="/images/scanner-icon.png">
+      <input type="file" id="take-picture" accept="image/*" hidden>
+    </div>
+    <div class="pack">
+      <%= link_to image_tag("/images/backpack.png"), backpack_show_path %>
+    </div><center>
+  </div>
     <%= yield %>
   </body>
 </html>
