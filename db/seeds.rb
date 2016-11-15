@@ -15,6 +15,7 @@ brocodile = {
   image_one: "brocolil.png",
   image_two: "brocolot.png",
   image_three: "brocodile.png",
+  monster_type: "broccoli",
   level: 1,
   xp: 0
 }
