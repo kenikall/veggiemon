@@ -12,9 +12,9 @@ brocodile = {
   name_one: "Brocoli'l",
   name_two: "Brocolots",
   name_three: "Brocodile",
-  image_one: "link to image1",
-  image_two: "link to image2",
-  image_three: "link to image3",
+  image_one: "brocolil.png",
+  image_two: "brocolot.png",
+  image_three: "brocodile.png",
   level: 1,
   xp: 0
 }
