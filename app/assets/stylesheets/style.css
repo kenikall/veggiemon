@@ -1,0 +1,294 @@
+    .veg-gif {
+      margin-top: 30px;
+      border: 15px solid #559359;
+      border-radius: 8px;
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+
+    .float-left {
+      float: left;
+    }
+
+    .lil {
+      margin-top: 120px;
+    }
+
+    .lot {
+      margin-top: 90px;
+    }
+
+    .dile {
+      margin-bottom: 20px;
+    }
+
+    .backpack_h1_bg {
+      background-color: #D6F8D6;
+      border-radius: 8px;
+      padding: 30px;
+      margin-left: 20%;
+      margin-right: 20%;
+      box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+      font-family: "Open Sans";
+    }
+
+    .style_veg_h2 {
+      background-color: #FFE882;
+      border-radius: 8px;
+      height: 40px;
+      width: 200px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      font-family: "Open Sans";
+    }
+
+    .style_item_h2 {
+      background-color: #FFE882;
+      border-radius: 8px;
+      height: 40px;
+      width: 200px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      font-family: "Open Sans";
+    }
+
+    .veggiemon {
+      margin: 20px;
+      background-color: #E3E9C2;
+      display: inline-block;
+      width: 90%;
+      border-radius: 13px;
+      padding-bottom: 30px;
+    }
+
+    .items {
+      border-top: 1px solid black;
+      background-color: #F9FBB2;
+      display: inline-block;
+      width: 90%;
+      padding-bottom: 30px;
+      border-radius: 13px;
+    }
+
+    .backpack_div {
+      float:left;
+      margin-left: 10%;
+    }
+
+      .navbar-h1{
+        background-color: #ef4f67;
+        padding: 30px;
+        color: white;
+        border: 1px solid #dd1c4d;
+        width: 400px;
+        border-radius: 50%;
+        text-align: center;
+        font-family: "Rammetto One";
+      }
+
+      .user_nav {
+        background-color: purple;
+        color: white;
+        padding: 3%;
+        width: 100%;
+        margin: 0;
+      }
+
+      .level {
+        display: inline;
+        border: 2px solid gray;
+        margin-left: 80%;
+        width: 15%;
+      }
+
+      .level_num {
+        display: inline;
+        border: 2px solid gray;
+        margin-left: 90%;
+        width: 5%;
+        border-radius: 2.5%;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        /*background-color: #00AAF0;*/
+        height: 100%;
+      }
+
+      .hideable {
+        height: 100%;
+      }
+
+      .ravi h1{
+        border: 2px solid red;
+        border-radius: 20px;
+        color: #f4431f;
+        margin-bottom: -60px;
+        font-size: 100px;
+        font-family: 'Ravi Prakash', cursive;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      .cool-bot-text {
+        background-color: #6acc92;
+        border-radius: 20px;
+      }
+
+      .user_image {
+        border: 1px solid black;
+        width: 600px;
+        height: 700px;
+        background-color: #b8efcf;
+        margin-top: 8%;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .user_image img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .main-page {
+        background-color: #c9ffdf;
+        padding-top: 20px;
+        margin-top: 40px;
+      }
+
+      .buttons {
+        background-color: #53e294;
+        padding: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .btns_bg {
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #63eda1;
+        display: inline-block;
+      }
+
+      .buttons {
+        margin: 30px;
+      }
+
+      input#take-picture {
+        height: 100px;
+        width: 100px;
+        background-image: url("scanner.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-right: 30px;
+      }
+
+      .map img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .pack img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .scan img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .home_button img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .map, .pack, .scan, .home_button {
+        border-radius: 5px;
+        float: left;
+      }
+
+
+
+      .home_button {
+      }
+
+      .home_button img {
+      }
+
+      .loader,
+      .loader:before,
+      .loader:after {
+        background: #ff1c26;
+        -webkit-animation: load1 1s infinite ease-in-out;
+        animation: load1 1s infinite ease-in-out;
+        width: 0.2em;
+        height: 6em;
+      }
+      .loader {
+        display: none;
+        color: #ff1c26;
+        text-indent: -9999em;
+        margin: 25% auto;
+        position: relative;
+        font-size: 40px;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      .loader:before,
+      .loader:after {
+        position: absolute;
+        top: 0;
+        content: '';
+      }
+      .loader:before {
+        left: -1.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      .loader:after {
+        left: 1.5em;
+      }
+      @-webkit-keyframes load1 {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0;
+          height: 4em;
+        }
+        40% {
+          box-shadow: 0 -2em;
+          height: 5em;
+        }
+      }
+      @keyframes load1 {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0;
+          height: 4em;
+        }
+        40% {
+          box-shadow: 0 -2em;
+          height: 5em;
+        }
+      }
+
+      #map {
+        height: 1000px;
+        width: 900px;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
