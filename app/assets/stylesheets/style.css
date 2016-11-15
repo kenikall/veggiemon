@@ -1,3 +1,10 @@
+    .veg-gif {
+      margin-top: 30px;
+      border: 15px solid #559359;
+      border-radius: 8px;
+      margin-right: 50px;
+      margin-left: 50px;
+    }
 
     .float-left {
       float: left;
@@ -46,11 +53,12 @@
     }
 
     .veggiemon {
+      margin: 20px;
       background-color: #E3E9C2;
       display: inline-block;
       width: 90%;
-      padding-bottom: 30px;
       border-radius: 13px;
+      padding-bottom: 30px;
     }
 
     .items {
@@ -68,12 +76,16 @@
     }
 
       .navbar-h1{
+        background-color: #ef4f67;
+        padding: 30px;
+        color: white;
+        border: 1px solid #dd1c4d;
+        width: 400px;
+        border-radius: 50%;
         text-align: center;
         font-family: "Rammetto One";
       }
 
-  
-     
       .user_nav {
         background-color: purple;
         color: white;
@@ -110,10 +122,29 @@
         height: 100%;
       }
 
+      .ravi h1{
+        border: 2px solid red;
+        border-radius: 20px;
+        color: #f4431f;
+        margin-bottom: -60px;
+        font-size: 100px;
+        font-family: 'Ravi Prakash', cursive;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      .cool-bot-text {
+        background-color: #6acc92;
+        border-radius: 20px;
+      }
+
       .user_image {
-        width: 450px;
-        height: 500px;
-        margin: 8% auto;
+        border: 1px solid black;
+        width: 600px;
+        height: 700px;
+        background-color: #b8efcf;
+        margin-top: 8%;
+        padding: 20px;
+        border-radius: 20px;
       }
 
       .user_image img {
@@ -121,30 +152,67 @@
         height: 100%;
       }
 
-      .buttons {
-        width: 100%;
-        background-color: #b9a8ff;
-        display: inline-block;
-        border-bottom: 1px dotted blue;
-        border-top: 5px solid #846ee5;
+      .main-page {
+        background-color: #c9ffdf;
+        padding-top: 20px;
+        margin-top: 40px;
       }
 
-      .buttons img {
+      .buttons {
+        background-color: #53e294;
+        padding: 20px;
+        padding-left: 100px;
+        padding-right: 100px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .btns_bg {
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: #63eda1;
+        display: inline-block;
+      }
+
+      .buttons {
         margin: 30px;
-        height: 100px;
-        width: 100px;
       }
 
       input#take-picture {
         height: 100px;
         width: 100px;
-        z-index: 5;
+        background-image: url("scanner.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-right: 30px;
+      }
+
+      .map img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .pack img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .scan img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .home_button img {
+        height: 100px;
+        width: 100px;
       }
 
       .map, .pack, .scan, .home_button {
         border-radius: 5px;
         float: left;
       }
+
+
 
       .home_button {
       }
@@ -214,8 +282,8 @@
       }
 
       #map {
-        height: 100%;
-        width: 100%;
+        height: 1000px;
+        width: 900px;
       }
 
       /* Optional: Makes the sample page fill the window. */
