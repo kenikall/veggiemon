@@ -52,15 +52,24 @@ var mainState = {
 		game.load.image('happy_face', '/images/happy_face.png');
 		//veggimon
 		game.load.image('brocolil', '/images/brocolil.png');
+		game.load.image('bluebeary', '/images/bluebeary.png');
+		game.load.image('brocodile', '/images/brocodile.png');
+		game.load.image('brocolot', '/images/brocolot.png');
+		game.load.image('tomtom', '/images/tomtom.png');
 	},
 
 	create: function() {
+		//setup scaling
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.updateLayout(true);
+
 		game.stage.backgroundColor = '#71c5cf';
 		this.background = game.add.sprite(0,0,'background');
-		// this.background.anchor(.5,.5);
 		this.trainer = game.add.sprite(-140,100, 'trainer');
-		// this.trainer.alpha = 0;
-		this.veggiemon = game.add.sprite(600,32, 'brocolil');
+
+		this.veggieChoice();
 		this.veggiemon.alpha = 0;
 
 		this.answerContainer = game.add.sprite(10,330, 'question_div');
@@ -157,6 +166,27 @@ var mainState = {
 		tween = game.add.tween(food).to({x: this.veggiemon.x, y: this.veggiemon.y+50}, 750, Phaser.Easing.Quadratic.InOut, true, 0);
 		game.add.tween(food.scale).to({x: .25, y: .25}, 750, Phaser.Easing.Linear.None, true);
 		tween.onComplete.add(function(){food.destroy()}, this);
+	},
+
+	veggieChoice: function(){
+		var choice = Math.random()
+		console.log(choice);
+		if (choice >= .9) {
+			this.veggiemon = game.add.sprite(580,0, 'brocodile');
+			this.veggieName = 'brocodile';
+		} else if (choice>=.75) {
+			this.veggiemon = game.add.sprite(600,32, 'brocolot');
+			this.veggieName = 'brocolot';
+		} else if (choice>=.5) {
+			this.veggiemon = game.add.sprite(600,32, 'bluebeary');
+			this.veggieName = 'bluebeary';
+		} else if (choice>=.25) {
+			this.veggiemon = game.add.sprite(600,32, 'tomtom');
+			this.veggieName =  'tomtom';
+		} else {
+			this.veggiemon = game.add.sprite(600,32, 'brocolil');
+			this.veggieName = 'brocolil'
+		}
 	},
 
 	checkFood: function(food){
@@ -269,9 +299,9 @@ var mainState = {
 		congrats.height = 10;
 
 
-		announce1 = game.add.text(game.world.centerX-2,game.world.centerY-118, "You captured \n     Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#000000'});
+		announce1 = game.add.text(game.world.centerX-2,game.world.centerY-118, "You captured \n     "+this.veggieName, {font: '35px Arial',fontWeight: 'bold', fill: '#000000'});
 		announce1.anchor.setTo(.5,.5);
-		announce = game.add.text(game.world.centerX,game.world.centerY-120, "You captured \n     Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#33ceff'});
+		announce = game.add.text(game.world.centerX,game.world.centerY-120, "You captured \n     "+this.veggieName, {font: '35px Arial',fontWeight: 'bold', fill: '#33ceff'});
 		announce.anchor.setTo(.5,.5);
 
 		var that = this
@@ -297,9 +327,9 @@ var mainState = {
 	},
 
 	spawnVeggie: function() {
-		announce1 = game.add.text(game.world.centerX-2,game.world.centerY-78, "You found a wild \n        Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#000000'});
+		announce1 = game.add.text(game.world.centerX-2,game.world.centerY-78, "You found a wild \n        "+this.veggieName, {font: '35px Arial',fontWeight: 'bold', fill: '#000000'});
 		announce1.anchor.setTo(.5,.5);
-		announce = game.add.text(game.world.centerX,game.world.centerY-80, "You found a wild \n        Brocolil", {font: '35px Arial',fontWeight: 'bold', fill: '#ffffff'});
+		announce = game.add.text(game.world.centerX,game.world.centerY-80, "You found a wild \n        "+this.veggieName, {font: '35px Arial',fontWeight: 'bold', fill: '#ffffff'});
 		announce.anchor.setTo(.5,.5);
 		if (this.veggiemon.alpha < 100){
 			game.time.events.repeat(100, 20, function(){
