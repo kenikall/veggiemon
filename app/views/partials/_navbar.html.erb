@@ -1,0 +1,25 @@
+<div>
+  <center>
+  <div class="btns_bg">
+    <div class="buttons">
+      <div class="home_button">
+        <%= link_to image_tag("/images/Home-icon.png"), root_path %>
+      </div>
+      <div class="map">
+        <%= link_to image_tag("/images/map_icon.ico"), google_maps_index_path %>
+      </div>
+      <div class="scan">
+        <!-- <img src="/images/scanner-icon.png"> -->
+        <input type="file" id="take-picture" accept="image/*">
+      </div>
+      <div class="battle">
+        <%= link_to image_tag("battle.png"), new_monster_path %>
+      </div>
+      <div class="pack">
+        <%= link_to image_tag("/images/backpack.png"), backpack_show_path %>
+      </div>
+    </div>
+    </div>
+  </center>
+</div>
+
