@@ -6,23 +6,22 @@ You can check out the live version [here] (http://veggiemongrow2016.herokuapp.co
 
 ![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veg.gif)
 
-Map feature.
 
 ![search] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon.gif)
 
-The battle.
+### The battle.
 
 ![signup] (https://github.com/erinc35/veggiemon/blob/dev/public/images/brocodile.png)
 
-Broccodile.
+### Broccodile.
 
 ![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon_maps.gif)
 
-Map feature.
+### Map feature.
 
 ![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon_backpack.gif)
 
-Backpack display.
+### Backpack display.
 
 ## Getting Started
 
@@ -40,7 +39,7 @@ rails 5.0.0
 From the command terminal, clone the repository to your local directory...
 ```
 $ git clone https://github.com/kenikall/veggiemon
-$ cd GuideMe
+$ cd veggiemon
 ```
 
 Then run bundle command to install all dependencies and run the server.
