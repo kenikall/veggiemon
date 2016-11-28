@@ -4,17 +4,25 @@ Veggiemon-Grow is an app that promotes kids to eat healthier and get them involv
 
 You can check out the live version [here] (http://veggiemongrow2016.herokuapp.com/).
 
+![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veg.gif)
+
+Map feature.
+
+![search] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon.gif)
+
+The battle.
+
 ![signup] (https://github.com/erinc35/veggiemon/blob/dev/public/images/brocodile.png)
 
 Broccodile.
 
-![search] (https://github.com/erinc35/GuideMe/blob/development/app/assets/images/search.gif)
+![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon_maps.gif)
 
-Searching cities and find the guide.
+Map feature.
 
-![chat] (https://github.com/erinc35/GuideMe/blob/development/app/assets/images/chat.gif)
+![chat] (https://github.com/kenikall/veggiemon/blob/dev/app/assets/images/veggiemon_backpack.gif)
 
-Chat feature.
+Backpack display.
 
 ## Getting Started
 
