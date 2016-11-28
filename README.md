@@ -4,9 +4,9 @@ Veggiemon-Grow is an app that promotes kids to eat healthier and get them involv
 
 You can check out the live version [here] (http://veggiemongrow2016.herokuapp.com/).
 
-![signup] (https://github.com/erinc35/GuideMe/blob/development/app/assets/images/signup.gif)
+![signup] (https://github.com/erinc35/veggiemon/blob/dev/public/images/brocodile.png)
 
-User signup.
+Broccodile.
 
 ![search] (https://github.com/erinc35/GuideMe/blob/development/app/assets/images/search.gif)
 
@@ -31,7 +31,7 @@ rails 5.0.0
 ### Installing
 From the command terminal, clone the repository to your local directory...
 ```
-$ git clone https://github.com/erinc35/GuideMe.git
+$ git clone https://github.com/kenikall/veggiemon
 $ cd GuideMe
 ```
 
